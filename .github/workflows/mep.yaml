@@ -31,3 +31,7 @@ jobs:
       - name: Echo for Dev
         if: github.event.inputs.environment == 'dev'
         run: echo "dev"
+
+      - name: Echo end workflow
+        run: echo "Workflow terminé"
+        if: always()
