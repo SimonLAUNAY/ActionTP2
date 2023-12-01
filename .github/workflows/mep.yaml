@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environnement (master, prod, qual, dev)'
+        description: 'Environnement (main, prod, qual, dev)'
         required: true
         default: 'dev'
 
