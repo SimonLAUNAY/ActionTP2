@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Master Branch
+      - name: Checkout Main Branch
         if: github.ref == 'refs/heads/main'
         uses: actions/checkout@v2
 
