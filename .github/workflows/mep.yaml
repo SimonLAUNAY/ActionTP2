@@ -22,7 +22,11 @@ jobs:
 
       - name: Echo for Qual
         if: github.event.inputs.environment == 'qual'
-        run: echo "qual"
+        run: echo "qual" *
+        
+      - name: Exit 1 for Qual
+        if: github.event.inputs.environment == 'qual'
+        run: exit(1)
 
       - name: Echo for Dev
         if: github.event.inputs.environment == 'dev'
