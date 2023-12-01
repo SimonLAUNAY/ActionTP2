@@ -1,0 +1,29 @@
+name: Mise en production
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environnement (master, prod, qual, dev)'
+        required: true
+        default: 'dev'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Master Branch
+        if: github.ref == 'refs/heads/master'
+        uses: actions/checkout@v2
+
+      - name: Echo for Prod
+        if: github.event.inputs.environment == 'prod'
+        run: echo "prod"
+
+      - name: Echo for Qual
+        if: github.event.inputs.environment == 'qual'
+        run: echo "qual"
+
+      - name: Echo for Dev
+        if: github.event.inputs.environment == 'dev'
+        run: echo "dev"
